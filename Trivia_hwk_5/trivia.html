@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Trivia Game!</title>
+	<!--BOOTSTRAP-->
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+	<!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="jumbotron">
+
+	<div id="header" style="text-align: center;">
+		<h2>You have 30 seconds to answer the questions below. Good Luck!</h2>
+	</div>
+
+	<!--QUIZ QUESTIONS START HERE!-->
+	<div id="quiz_questions">
+		<!--QUESTION STARTS: INSIDE PANEL-->
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<!--THIS IS WHERE IS GOES WILL BE ASKED-->
+				<p>Question</p>
+				<!--BELOW OR THE POSSIBLE ANSWERS TO CHOOSE FROM-->
+				<div class="radio">
+					<label> <input type="radio" name="q1" id="q1_a" value="a"> A </label>
+				</div>
+				<div class="radio">
+					<label> <input type="radio" name="q1" id="q1_b" value="b"> B </label>
+				</div>
+				<div class="radio">
+					<label> <input type="radio" name="q1" id="q1_c" value="c"> C </label>
+				</div>
+			</div>
+		</div><!--QUESTION ENDS-->
+
+		<!--QUESTION STARTS: INSIDE PANEL-->
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<!--THIS IS WHERE IS GOES WILL BE ASKED-->
+				<p>Question</p>
+				<!--BELOW OR THE POSSIBLE ANSWERS TO CHOOSE FROM-->
+				<div class="radio">
+					<label> <input type="radio" name="q2" id="q2_a" value="a"> A </label>
+				</div>
+				<div class="radio">
+					<label> <input type="radio" name="q2" id="q2_b" value="b"> B </label>
+				</div>
+				<div class="radio">
+					<label> <input type="radio" name="q2" id="q2_c" value="c"> C </label>
+				</div>
+			</div>
+		</div><!--QUESTION ENDS-->
+
+		<!--QUESTION STARTS: INSIDE PANEL-->
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<!--THIS IS WHERE IS GOES WILL BE ASKED-->
+				<p>Question</p>
+				<!--BELOW OR THE POSSIBLE ANSWERS TO CHOOSE FROM-->
+				<div class="radio">
+					<label> <input type="radio" name="q3" id="q3_a" value="a"> A </label>
+				</div>
+				<div class="radio">
+					<label> <input type="radio" name="q3" id="q3_b" value="b"> B </label>
+				</div>
+				<div class="radio">
+					<label> <input type="radio" name="q3" id="q3_c" value="c"> C </label>
+				</div>
+			</div>
+		</div><!--QUESTION ENDS-->
+
+		<!--QUESTION STARTS: INSIDE PANEL-->
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<!--THIS IS WHERE IS GOES WILL BE ASKED-->
+				<p>Question</p>
+				<!--BELOW OR THE POSSIBLE ANSWERS TO CHOOSE FROM-->
+				<div class="radio">
+					<label> <input type="radio" name="q4" id="q4_a" value="a"> A </label>
+				</div>
+				<div class="radio">
+					<label> <input type="radio" name="q4" id="q4_b" value="b"> B </label>
+				</div>
+				<div class="radio">
+					<label> <input type="radio" name="q4" id="q4_c" value="c"> C </label>
+				</div>
+			</div>
+		</div><!--QUESTION ENDS-->
+
+		<!--QUESTION STARTS: INSIDE PANEL-->
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<!--THIS IS WHERE IS GOES WILL BE ASKED-->
+				<p>Question</p>
+				<!--BELOW OR THE POSSIBLE ANSWERS TO CHOOSE FROM-->
+				<div class="radio">
+					<label> <input type="radio" name="q5" id="q5_a" value="a"> A </label>
+				</div>
+				<div class="radio">
+					<label> <input type="radio" name="q5" id="q5_b" value="b"> B </label>
+				</div>
+				<div class="radio">
+					<label> <input type="radio" name="q5" id="q5_c" value="c"> C </label>
+				</div>
+			</div>
+		</div><!--QUESTION ENDS-->
+	</div>
+	<!--QUIZ QUESTIONS END HERE!-->
+
+	<!--SUBMIT BUTTON0-->
+	<div style="text-align: center;">
+		<button class="btn btn-info" onclick="times_up();" style="text-align: center;"><h4>Finish!</h4></button>
+	</div>
+
+</div>
+
+<script type="text/javascript">
+	//DECLARING VARIABLES (i made right and wrong so that you can know total, right, wrong)
+	var right = 0, wrong = 0;
+
+	function check_answers(){
+		//CHECKING ANSWER FOR QUESTION 1
+		if( document.getElementById("q1_a").checked ){
+			right++;
+		}else{
+			wrong++;
+		}
+		//CHECKING ANSWER FOR QUESTION 2
+		if( document.getElementById("q2_a").checked ){
+			right++;
+		}else{
+			wrong++;
+		}
+		//CHECKING ANSWER FOR QUESTION 3
+		if( document.getElementById("q3_a").checked ){
+			right++;
+		}else{
+			wrong++;
+		}
+		//CHECKING ANSWER FOR QUESTION 4
+		if( document.getElementById("q4_a").checked ){
+			right++;
+		}else{
+			wrong++;
+		}
+		//CHECKING ANSWER FOR QUESTION 5
+		if( document.getElementById("q5_a").checked ){
+			right++;
+		}else{
+			wrong++;
+		}
+	}
+
+	function times_up(){
+		check_answers();
+		alert("30 seconds have passed!" + "\nYou got " + right + " out of 5");
+		location.replace("index.html");
+	}
+	/*
+		CHANGE THIS TO 30 SECONDS!
+	*/
+	setInterval(times_up, 10000);
+</script>
+
+</body>
+</html>
